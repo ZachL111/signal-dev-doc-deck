@@ -1,0 +1,73 @@
+{
+  "repo": "signal-dev-doc-deck",
+  "language": "Rust",
+  "category": "Developer tools",
+  "goal": "Build a Rust toolkit that studies doc behavior through capacity fixtures, with allocation and spill reports and no network dependency.",
+  "review_model": {
+    "terms": [
+      "change width",
+      "diagnostic quality",
+      "review cost",
+      "safe rewrite"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "change width",
+      "signal": 74,
+      "slack": 23,
+      "drag": 32,
+      "confidence": 66,
+      "score": 141,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "diagnostic quality",
+      "signal": 62,
+      "slack": 35,
+      "drag": 25,
+      "confidence": 62,
+      "score": 146,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "review cost",
+      "signal": 84,
+      "slack": 29,
+      "drag": 12,
+      "confidence": 74,
+      "score": 235,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "safe rewrite",
+      "signal": 84,
+      "slack": 35,
+      "drag": 8,
+      "confidence": 52,
+      "score": 231,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "change width",
+      "signal": 56,
+      "slack": 23,
+      "drag": 22,
+      "confidence": 46,
+      "score": 115,
+      "lane": "watch"
+    }
+  ]
+}
